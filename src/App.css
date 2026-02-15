@@ -1,0 +1,5 @@
+/* Keep App-level CSS minimal; the dashboard uses Tailwind classes. */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
