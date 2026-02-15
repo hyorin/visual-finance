@@ -1,16 +1,48 @@
-# React + Vite
+# Visual Finance
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+배당 포트폴리오 기반 재정 자유 시뮬레이터. 현재 자산, 월 생활비, 추가 불입액과 배당 포트폴리오 구성을 입력하면, 배당 수익이 생활비를 넘어서는 **생존능선 돌파 시점**을 시각적으로 보여줍니다.
 
-Currently, two official plugins are available:
+## 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **재정 시뮬레이션 차트** - 연도별 총 자산(Bar)과 월 배당금/생활비(Line)를 ComposedChart로 시각화
+- **생존지수 실시간 표시** - 차트 호버/클릭으로 특정 연도의 배당 대비 생활비 비율(생존지수) 확인
+- **배당 포트폴리오 편집** - SCHD, O, JEPI, JEPQ 등 티커별 CAGR, 배당률, 배분 비중을 자유롭게 조정
+- **티커 추가/삭제** - 커스텀 티커를 추가하고 비중을 자동 정규화
+- **목표 달성 시점 계산** - 배당금이 목표 생활비를 초과하는 연도(D-Year)를 자동 산출
 
-## React Compiler
+## 기술 스택
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **Vite 8**
+- **Recharts** - 차트 시각화
+- **Tailwind CSS 3** - 스타일링
 
-## Expanding the ESLint configuration
+## 시작하기
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## 스크립트
+
+| 명령어 | 설명 |
+|---|---|
+| `npm run dev` | 개발 서버 실행 |
+| `npm run build` | 프로덕션 빌드 |
+| `npm run preview` | 빌드 결과 미리보기 |
+| `npm run lint` | ESLint 검사 |
+
+## 프로젝트 구조
+
+```
+src/
+├── components/
+│   └── FinancialDashboard.jsx   # 메인 대시보드 컴포넌트
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## 라이선스
+
+MIT
